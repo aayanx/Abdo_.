@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Abdo - Abdulrahman Sameer | Future Entrepreneur & Product Developer</title>
+    <meta name="description" content="14-year-old Egyptian entrepreneur living in UAE. Passionate about business innovation, product development, and e-commerce strategy. Explore my journey in building innovative products.">
+    <meta property="og:title" content="Abdo - Abdulrahman Sameer | Future Entrepreneur">
+    <meta property="og:description" content="14-year-old entrepreneur passionate about innovation, product development, and business strategy.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="./client/public/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --primary-blue: #3b82f6;
+            --accent-orange: #fb923c;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --card-bg: rgba(20, 20, 30, 0.8);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .font-signature {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .font-mono {
+            font-family: 'Press Start 2P', monospace;
+        }
+
+        /* Animated Background */
+        #animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .earth-globe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: spin 60s linear infinite;
+        }
+
+        .earth-globe::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+        }
+
+        .earth-globe::after {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            filter: blur(40px);
+        }
+
+        .globe-ring {
+            position: absolute;
+            inset: 20%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .globe-ring-2 {
+            position: absolute;
+            inset: 30%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .globe-dot {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .globe-dot-1 {
+            top: 0;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+            margin-top: -4px;
+        }
+
+        .globe-dot-2 {
+            top: 33%;
+            right: 0;
+            width: 6px;
+            height: 6px;
+            margin-right: -3px;
+        }
+
+        .globe-dot-3 {
+            bottom: 25%;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .earth-globe {
+                width: 400px;
+                height: 400px;
+            }
+        }
+        
+        #animated-bg .overlay-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(251, 146, 60, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .floating-fact {
+            position: absolute;
+            font-family: 'Press Start 2P', monospace;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: float 20s infinite ease-in-out;
+            white-space: nowrap;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 12s infinite ease-in-out;
+            z-index: 2;
+        }
+        
+        .glow-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 25s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .glow-blue {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent);
+        }
+        
+        .glow-orange {
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.4), transparent);
+        }
+        
+        .glow-pink {
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.4), transparent);
+        }
+        
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0.7;
+            }
+            25% {
+                transform: translate(50px, -100px);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-30px, -200px);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translate(-80px, -150px);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes rainbow {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 10, 15, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        /* Sections */
+        main {
+            position: relative;
+            z-index: 10;
+        }
+
+        section {
+            padding: 6rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1152px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        #home {
+            text-align: center;
+        }
+
+        .hero-name {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: bold;
+            background: linear-gradient(to right, #3b82f6, #ec4899, #fb923c, #eab308, #3b82f6, #ec4899);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s linear infinite;
+            filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6));
+            margin-bottom: 1rem;
+        }
+
+        .hero-fullname {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .typewriter-container {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .typewriter {
+            font-family: 'Press Start 2P', monospace;
+            font-size: clamp(0.75rem, 2vw, 1rem);
+            line-height: 1.8;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        .hero-bio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            flex-wrap: wrap;
+        }
+
+        .hero-bio .age {
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        .hero-bio .separator {
+            color: var(--text-secondary);
+        }
+
+        .hero-bio .grade {
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+
+        .hero-flags {
+            font-size: 2rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Cards */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .card-icon {
+            width: 2rem;
+            height: 2rem;
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-blue);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        /* Social Cards */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .social-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .social-icon-wrapper {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon {
+            width: 2rem;
+            height: 2rem;
+            fill: white;
+        }
+
+        .social-instagram {
+            background: linear-gradient(135deg, #e11d74, #fb923c);
+        }
+
+        .social-card:hover .social-instagram {
+            background: linear-gradient(135deg, #f43f8d, #fda55c);
+        }
+
+        .social-discord {
+            background: #5865f2;
+        }
+
+        .social-card:hover .social-discord {
+            background: #7289da;
+        }
+
+        .social-tiktok {
+            background: linear-gradient(135deg, #00f2ea, #3b82f6);
+        }
+
+        .social-card:hover .social-tiktok {
+            background: linear-gradient(135deg, #4df5ed, #60a5fa);
+        }
+
+        .social-snapchat {
+            background: #fffc00;
+        }
+
+        .social-snapchat .social-icon {
+            fill: black !important;
+        }
+
+        .social-card:hover .social-snapchat {
+            background: #ffff4d;
+        }
+
+        .social-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .social-handle {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* DM Etiquette */
+        .dm-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .dm-examples {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .dm-example {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .dm-wrong {
+            color: #ef4444;
+            font-size: 1.5rem;
+        }
+
+        .dm-right {
+            color: #10b981;
+            font-size: 1.5rem;
+        }
+
+        .dm-message {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .dm-message-wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .dm-message-right {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+
+        .dm-explanation {
+            margin-top: 2rem;
+        }
+
+        .dm-explanation h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .dm-explanation p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .nav-links {
+                gap: 1rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+                min-height: auto;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div id="animated-bg">
+        <div class="earth-globe">
+            <div class="globe-ring"></div>
+            <div class="globe-ring-2"></div>
+            <div class="globe-dot globe-dot-1"></div>
+            <div class="globe-dot globe-dot-2"></div>
+            <div class="globe-dot globe-dot-3"></div>
+        </div>
+        <div class="overlay-pattern"></div>
+        <div id="floating-facts"></div>
+        <div id="particles"></div>
+        <div id="glow-orbs"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <button class="logo" onclick="scrollToSection('home')">◆ Abdo</button>
+            <div class="nav-links">
+                <a onclick="scrollToSection('home')" class="active">Home</a>
+                <a onclick="scrollToSection('hobbies')">Hobbies</a>
+                <a onclick="scrollToSection('contacts')">Contacts</a>
+                <a onclick="scrollToSection('dm-etiquette')">DM Etiquette</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home">
+            <h1 class="hero-name">◆ Abdo</h1>
+            <h2 class="hero-fullname">Abdulrahman Sameer</h2>
+            
+            <div class="typewriter-container">
+                <p class="typewriter">
+                    <span id="typed-text"></span><span class="cursor">|</span>
+                </p>
+            </div>
+
+            <div class="hero-bio">
+                <span class="age">14 years old</span>
+                <span class="separator">•</span>
+                <span class="grade">10th Grade</span>
+            </div>
+
+            <div class="hero-flags">
+                🇪🇬 <span style="color: var(--primary-blue);">◆</span> 🇦🇪
+            </div>
+        </section>
+
+        <!-- What I'm Into Section -->
+        <section id="hobbies">
+            <div class="container">
+                <h2 class="section-title">What I'm Into</h2>
+                <p class="section-subtitle">Hobbies and interests that keep me busy</p>
+                
+                <div class="card-grid" id="hobbies-grid"></div>
+            </div>
+        </section>
+
+        <!-- Let's Connect Section -->
+        <section id="contacts">
+            <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Find me on these platforms</p>
+                
+                <div class="social-grid">
+                    <a href="https://instagram.com/a.x.y.n.y" target="_blank" class="social-card">
+                        <div class="social-icon-wrapper social-instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div class="social-name">Instagram</div>
+                        <div class="social-handle">@a.x.y.n.y</div>
+                    </a>
+                    
+                    <a href="#" class="social-card">
+                        <div class="social-icon-wrapper social-discord">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                            </svg>
+                        </div>
+                        <div class="social-name">Discord</div>
+                        <div class="social-handle">@stresswa</div>
+                    </a>
+                    
+                    <a href="https://tiktok.com/@aayanav" target="_blank" class="social-card">
+                        <div class="social-icon-wrapper social-tiktok">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <div class="social-name">TikTok</div>
+                        <div class="social-handle">@aayanav</div>
+                    </a>
+                    
+                    <a href="#" class="social-card">
+                        <div class="social-icon-wrapper social-snapchat">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3 0 .677-.096 1.03-.096.28 0 .47.044.616.133.096.06.164.117.22.183.168.237.268.621.246 1.036-.028.546-.371.873-.734 1.108-.122.078-.25.15-.368.223-.728.453-1.097 1.093-.854 2.01.022.083.05.173.084.27.25.749.61 1.83 1.662 2.479.135.082.287.196.445.315l.062.048c.458.355 1.047.813 1.062 1.45.009.43-.242.807-.671 1.001-.137.06-.301.115-.436.16-.51.17-1.018.337-1.513.503-.092.03-.18.064-.268.095-.417.15-.822.295-1.187.578-.203.157-.33.33-.405.508-.104.243-.078.523-.022.726.148.405.38.791.602 1.108.063.096.118.181.174.264.36.544.763 1.15.76 2.02-.004.624-.287 1.166-.836 1.584-.544.413-1.291.654-2.113.654-.578 0-1.116-.089-1.635-.267-.213-.072-.43-.147-.647-.222-.511-.175-1.04-.354-1.594-.422-.089-.01-.171-.015-.25-.015-.36 0-.71.089-1.054.175l-.132.033c-.293.074-.606.149-.906.2-.437.068-.828.102-1.197.102-.69 0-1.297-.16-1.81-.472-.463-.282-.795-.658-.988-1.116-.137-.321-.186-.656-.186-.979 0-.873.424-1.507.81-2.082.06-.087.12-.177.18-.27.202-.31.41-.64.555-1.017.076-.197.104-.48 0-.724-.072-.172-.196-.34-.395-.497-.368-.291-.778-.44-1.192-.588-.102-.037-.208-.075-.313-.117-.52-.171-1.026-.332-1.53-.5-.13-.043-.287-.094-.417-.152-.425-.19-.667-.57-.655-1.002.014-.637.603-1.096 1.06-1.45l.045-.036c.163-.12.323-.236.463-.321.911-.56 1.242-1.484 1.454-2.155.026-.083.051-.162.071-.24.246-.933-.098-1.598-.819-2.056-.115-.072-.24-.144-.36-.22-.364-.232-.708-.56-.736-1.109-.023-.416.076-.8.245-1.037.056-.065.125-.123.223-.183.145-.09.334-.134.61-.134.36 0 .739.097 1.04.097.2 0 .324-.044.398-.09-.009-.166-.019-.33-.03-.51l-.002-.06c-.105-1.628-.23-3.654.298-4.847C7.86 1.07 11.217.794 12.207.794z"/>
+                            </svg>
+                        </div>
+                        <div class="social-name">Snapchat</div>
+                        <div class="social-handle">@AbdoYYMM</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DM Etiquette Section -->
+        <section id="dm-etiquette">
+            <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+                <h2 class="section-title">DM Etiquette</h2>
+                <p class="section-subtitle">How to slide into my DMs</p>
+                
+                <div class="dm-card">
+                    <div class="dm-examples" id="dm-examples-container"></div>
+                    
+                    <div class="dm-explanation">
+                        <h3>Why does this matter?</h3>
+                        <p>I love meeting new people and hearing about cool ideas! But spammy messages make it hard to find the genuine conversations. Start with context, and we'll have a much better chat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Hobbies Data
+        const hobbies = [
+            { icon: "◆", title: "Entrepreneurship", description: "Building and scaling innovative businesses" },
+            { icon: "★", title: "Gaming", description: "Strategic gameplay and competitive gaming" },
+            { icon: "◆", title: "Football", description: "Team sports and coordination" },
+            { icon: "★", title: "Food", description: "Exploring culinary experiences" },
+            { icon: "◆", title: "Jogging", description: "Staying active and clearing my mind" }
+        ];
+
+        function renderHobbies() {
+            const grid = document.getElementById('hobbies-grid');
+            grid.innerHTML = hobbies.map(hobby => `
+                <div class="card">
+                    <div class="card-icon">${hobby.icon}</div>
+                    <h3 class="card-title">${hobby.title}</h3>
+                    <p class="card-description">${hobby.description}</p>
+                </div>
+            `).join('');
+        }
+
+        // Typewriter Effect
+        const phrases = [
+            "im abdulrahman sameer i love exploring business opportunities",
+            "im abdulrahman sameer i play games when I have time",
+            "im abdulrahman sameer i build innovative products"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const textElement = document.getElementById('typed-text');
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => { isDeleting = true; }, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        // DM Examples
+        const dmExamples = [
+            { type: 'wrong', message: "Hi" },
+            { type: 'right', message: "Hi! How's it going? Wanted to chat about gaming" },
+            { type: 'wrong', message: "Hey" },
+            { type: 'right', message: "Hey! I saw you're into football, me too!" },
+            { type: 'wrong', message: "What's up" },
+            { type: 'right', message: "Hi Abdo! Just wanted to say your portfolio looks awesome" }
+        ];
+
+        let currentExample = 0;
+
+        function animateDMExamples() {
+            const container = document.getElementById('dm-examples-container');
+            
+            function showExample() {
+                const example = dmExamples[currentExample];
+                const icon = example.type === 'wrong' ? '✗' : '✓';
+                const iconClass = example.type === 'wrong' ? 'dm-wrong' : 'dm-right';
+                const messageClass = example.type === 'wrong' ? 'dm-message-wrong' : 'dm-message-right';
+                
+                container.innerHTML = `
+                    <div class="dm-example">
+                        <span class="${iconClass}">${icon}</span>
+                        <div class="dm-message ${messageClass}">${example.message}</div>
+                    </div>
+                `;
+                
+                currentExample = (currentExample + 1) % dmExamples.length;
+            }
+            
+            showExample();
+            setInterval(showExample, 4000);
+        }
+
+        // Smooth scroll
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Animated Background
+        function createFloatingFacts() {
+            const facts = [
+                "★ 14 years old",
+                "◆ Egyptian living in UAE",
+                "✦ Future Entrepreneur",
+                "★ 10th Grade",
+                "◆ Innovation Driven",
+                "★ Product Builder",
+                "◆ Gaming Enthusiast",
+                "✦ Market Researcher"
+            ];
+            const container = document.getElementById('floating-facts');
+            
+            facts.forEach((factText, i) => {
+                const fact = document.createElement('div');
+                fact.className = 'floating-fact';
+                fact.textContent = factText;
+                fact.style.left = Math.random() * 100 + '%';
+                fact.style.top = Math.random() * 100 + '%';
+                fact.style.animationDelay = (i * 2) + 's';
+                fact.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(fact);
+            });
+        }
+
+        function createParticles() {
+            const container = document.getElementById('particles');
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 12 + 's';
+                particle.style.animationDuration = (Math.random() * 8 + 8) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        function createGlowOrbs() {
+            const container = document.getElementById('glow-orbs');
+            const classes = ['glow-blue', 'glow-orange', 'glow-pink'];
+            
+            for (let i = 0; i < 3; i++) {
+                const orb = document.createElement('div');
+                orb.className = 'glow-orb ' + classes[i];
+                orb.style.left = Math.random() * 80 + 10 + '%';
+                orb.style.top = Math.random() * 80 + 10 + '%';
+                orb.style.animationDelay = Math.random() * 25 + 's';
+                orb.style.animationDuration = (Math.random() * 10 + 20) + 's';
+                container.appendChild(orb);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            typeWriter();
+            renderHobbies();
+            animateDMExamples();
+            createFloatingFacts();
+            createParticles();
+            createGlowOrbs();
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['home', 'hobbies', 'contacts', 'dm-etiquette'];
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = sectionId;
+                }
+            });
+
+            navLinks.forEach((link, index) => {
+                link.classList.remove('active');
+                if (sections[index] === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
