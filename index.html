@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="./client/public/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300;400;500;600;700&family=Press+Start+2P&family=Caveat:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -43,6 +43,29 @@
 
         .font-mono {
             font-family: 'Press Start 2P', monospace;
+        }
+
+        .font-cursive {
+            font-family: 'Caveat', cursive;
+        }
+
+        .font-arabic {
+            font-family: 'Amiri', serif;
+        }
+
+        .arabic-gradient {
+            background: linear-gradient(135deg, #60A5FA 0%, #FFFFFF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .translation-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            margin-bottom: 0.25rem;
         }
 
         /* Animated Background */
@@ -163,7 +186,7 @@
             position: absolute;
             font-family: 'Press Start 2P', monospace;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             font-weight: bold;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
             animation: float 20s infinite ease-in-out;
@@ -669,12 +692,38 @@
         <!-- Hero Section -->
         <section id="home">
             <h1 class="hero-name">◆ Abdo</h1>
-            <h2 class="hero-fullname">Abdulrahman Sameer</h2>
+            <h2 class="hero-fullname font-cursive">Abdulrahman Sameer</h2>
+            <div style="text-align: center; margin: 0.5rem 0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6; margin-bottom: 0.25rem;">
+                    <path d="m5 8 6 6"></path>
+                    <path d="m4 14 6-6 2-3"></path>
+                    <path d="M2 5h12"></path>
+                    <path d="M7 2h1"></path>
+                    <path d="m22 22-5-10-5 10"></path>
+                    <path d="M14 18h6"></path>
+                </svg>
+                <p class="font-arabic arabic-gradient" style="font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: bold; margin: 0.25rem 0;" dir="rtl">عبدالرحمن سمير</p>
+            </div>
             
-            <div class="typewriter-container">
-                <p class="typewriter">
-                    <span id="typed-text"></span><span class="cursor">|</span>
-                </p>
+            <div style="margin-top: 2rem;">
+                <p class="hero-name" style="font-size: clamp(1.3rem, 4vw, 1.7rem); margin-bottom: 0.5rem;">im abdulrahman sameer,</p>
+                
+                <div class="typewriter-container" style="height: auto; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                    <p class="typewriter">
+                        <span id="typed-text"></span><span class="cursor">|</span>
+                    </p>
+                    <div style="text-align: center;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.5; margin-bottom: 0.25rem;">
+                            <path d="m5 8 6 6"></path>
+                            <path d="m4 14 6-6 2-3"></path>
+                            <path d="M2 5h12"></path>
+                            <path d="M7 2h1"></path>
+                            <path d="m22 22-5-10-5 10"></path>
+                            <path d="M14 18h6"></path>
+                        </svg>
+                        <p class="font-arabic arabic-gradient" style="font-size: clamp(1rem, 2.5vw, 1.15rem); font-weight: 600; min-height: 32px; margin: 0.25rem 0;" dir="rtl" id="typed-text-arabic"></p>
+                    </div>
+                </div>
             </div>
 
             <div class="hero-bio">
@@ -692,7 +741,29 @@
         <section id="hobbies">
             <div class="container">
                 <h2 class="section-title">What I'm Into</h2>
-                <p class="section-subtitle">Hobbies and interests that keep me busy</p>
+                <div style="text-align: center; margin: -0.5rem 0 0 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6; margin-bottom: 0.25rem;">
+                        <path d="m5 8 6 6"></path>
+                        <path d="m4 14 6-6 2-3"></path>
+                        <path d="M2 5h12"></path>
+                        <path d="M7 2h1"></path>
+                        <path d="m22 22-5-10-5 10"></path>
+                        <path d="M14 18h6"></path>
+                    </svg>
+                    <p class="font-arabic arabic-gradient" style="font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: bold; margin: 0.25rem 0;" dir="rtl">ما أهتم به</p>
+                </div>
+                <p class="section-subtitle" style="margin-top: 1rem;">Hobbies and interests that keep me busy</p>
+                <div style="text-align: center; margin-top: -2.5rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.5; margin-bottom: 0.25rem;">
+                        <path d="m5 8 6 6"></path>
+                        <path d="m4 14 6-6 2-3"></path>
+                        <path d="M2 5h12"></path>
+                        <path d="M7 2h1"></path>
+                        <path d="m22 22-5-10-5 10"></path>
+                        <path d="M14 18h6"></path>
+                    </svg>
+                    <p class="font-arabic arabic-gradient" style="font-size: clamp(1rem, 2.3vw, 1.15rem); font-weight: 600; margin: 0.25rem 0 4rem 0;" dir="rtl">الهوايات والاهتمامات التي تشغلني</p>
+                </div>
                 
                 <div class="card-grid" id="hobbies-grid"></div>
             </div>
@@ -702,7 +773,29 @@
         <section id="contacts">
             <div class="container" style="display: flex; flex-direction: column; align-items: center;">
                 <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Find me on these platforms</p>
+                <div style="text-align: center; margin: -0.5rem 0 0 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6; margin-bottom: 0.25rem;">
+                        <path d="m5 8 6 6"></path>
+                        <path d="m4 14 6-6 2-3"></path>
+                        <path d="M2 5h12"></path>
+                        <path d="M7 2h1"></path>
+                        <path d="m22 22-5-10-5 10"></path>
+                        <path d="M14 18h6"></path>
+                    </svg>
+                    <p class="font-arabic arabic-gradient" style="font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: bold; margin: 0.25rem 0;" dir="rtl">لنتواصل</p>
+                </div>
+                <p class="section-subtitle" style="margin-top: 1rem;">Find me on these platforms</p>
+                <div style="text-align: center; margin-top: -2.5rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.5; margin-bottom: 0.25rem;">
+                        <path d="m5 8 6 6"></path>
+                        <path d="m4 14 6-6 2-3"></path>
+                        <path d="M2 5h12"></path>
+                        <path d="M7 2h1"></path>
+                        <path d="m22 22-5-10-5 10"></path>
+                        <path d="M14 18h6"></path>
+                    </svg>
+                    <p class="font-arabic arabic-gradient" style="font-size: clamp(1rem, 2.3vw, 1.15rem); font-weight: 600; margin: 0.25rem 0 4rem 0;" dir="rtl">تجدني على هذه المنصات</p>
+                </div>
                 
                 <div class="social-grid">
                     <a href="https://instagram.com/a.x.y.n.y" target="_blank" class="social-card">
@@ -752,7 +845,29 @@
         <section id="dm-etiquette">
             <div class="container" style="display: flex; flex-direction: column; align-items: center;">
                 <h2 class="section-title">DM Etiquette</h2>
-                <p class="section-subtitle">How to slide into my DMs</p>
+                <div style="text-align: center; margin: -0.5rem 0 0 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6; margin-bottom: 0.25rem;">
+                        <path d="m5 8 6 6"></path>
+                        <path d="m4 14 6-6 2-3"></path>
+                        <path d="M2 5h12"></path>
+                        <path d="M7 2h1"></path>
+                        <path d="m22 22-5-10-5 10"></path>
+                        <path d="M14 18h6"></path>
+                    </svg>
+                    <p class="font-arabic arabic-gradient" style="font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: bold; margin: 0.25rem 0;" dir="rtl">آداب المراسلة</p>
+                </div>
+                <p class="section-subtitle" style="margin-top: 1rem;">How to reach out effectively</p>
+                <div style="text-align: center; margin-top: -2.5rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.5; margin-bottom: 0.25rem;">
+                        <path d="m5 8 6 6"></path>
+                        <path d="m4 14 6-6 2-3"></path>
+                        <path d="M2 5h12"></path>
+                        <path d="M7 2h1"></path>
+                        <path d="m22 22-5-10-5 10"></path>
+                        <path d="M14 18h6"></path>
+                    </svg>
+                    <p class="font-arabic arabic-gradient" style="font-size: clamp(1rem, 2.3vw, 1.15rem); font-weight: 600; margin: 0.25rem 0 4rem 0;" dir="rtl">كيف تتواصل معي بفعالية</p>
+                </div>
                 
                 <div class="dm-card">
                     <div class="dm-examples" id="dm-examples-container"></div>
@@ -769,11 +884,11 @@
     <script>
         // Hobbies Data
         const hobbies = [
-            { icon: "◆", title: "Entrepreneurship", description: "Building and scaling innovative businesses" },
-            { icon: "★", title: "Gaming", description: "Strategic gameplay and competitive gaming" },
-            { icon: "◆", title: "Football", description: "Team sports and coordination" },
-            { icon: "★", title: "Food", description: "Exploring culinary experiences" },
-            { icon: "◆", title: "Jogging", description: "Staying active and clearing my mind" }
+            { icon: "◆", title: "Entrepreneurship", titleAr: "ريادة الأعمال", description: "Building and scaling innovative businesses", descriptionAr: "بناء وتوسيع الأعمال المبتكرة" },
+            { icon: "★", title: "Gaming", titleAr: "الألعاب", description: "Strategic gameplay and competitive gaming", descriptionAr: "اللعب الاستراتيجي والمنافسة" },
+            { icon: "◆", title: "Football", titleAr: "كرة القدم", description: "Team sports and coordination", descriptionAr: "الرياضة الجماعية والتنسيق" },
+            { icon: "★", title: "Food", titleAr: "الطعام", description: "Exploring culinary experiences", descriptionAr: "استكشاف التجارب الغذائية" },
+            { icon: "◆", title: "Jogging", titleAr: "الركض", description: "Staying active and clearing my mind", descriptionAr: "البقاء نشيطًا وتصفية الذهن" }
         ];
 
         function renderHobbies() {
@@ -782,16 +897,38 @@
                 <div class="card">
                     <div class="card-icon">${hobby.icon}</div>
                     <h3 class="card-title">${hobby.title}</h3>
+                    <div style="display: flex; align-items: flex-start; gap: 0.25rem; margin: 0.5rem 0;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.4; margin-top: 0.15rem; flex-shrink: 0;">
+                            <path d="m5 8 6 6"></path>
+                            <path d="m4 14 6-6 2-3"></path>
+                            <path d="M2 5h12"></path>
+                            <path d="M7 2h1"></path>
+                            <path d="m22 22-5-10-5 10"></path>
+                            <path d="M14 18h6"></path>
+                        </svg>
+                        <p class="font-arabic arabic-gradient" style="font-size: 0.875rem; font-weight: 600; margin: 0;" dir="rtl">${hobby.titleAr}</p>
+                    </div>
                     <p class="card-description">${hobby.description}</p>
+                    <div style="display: flex; align-items: flex-start; gap: 0.25rem; margin-top: 0.5rem;">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.3; margin-top: 0.15rem; flex-shrink: 0;">
+                            <path d="m5 8 6 6"></path>
+                            <path d="m4 14 6-6 2-3"></path>
+                            <path d="M2 5h12"></path>
+                            <path d="M7 2h1"></path>
+                            <path d="m22 22-5-10-5 10"></path>
+                            <path d="M14 18h6"></path>
+                        </svg>
+                        <p class="font-arabic arabic-gradient" style="font-size: 0.75rem; font-weight: 500; margin: 0; line-height: 1.6;" dir="rtl">${hobby.descriptionAr}</p>
+                    </div>
                 </div>
             `).join('');
         }
 
         // Typewriter Effect
         const phrases = [
-            "im abdulrahman sameer i love exploring business opportunities",
-            "im abdulrahman sameer i play games when I have time",
-            "im abdulrahman sameer i build innovative products"
+            { en: "love building innovative businesses", ar: "أحب بناء الأعمال المبتكرة" },
+            { en: "enjoy gaming and playing football", ar: "أستمتع بالألعاب وكرة القدم" },
+            { en: "explore new opportunities and ideas", ar: "أستكشف الفرص والأفكار الجديدة" }
         ];
         let phraseIndex = 0;
         let charIndex = 0;
@@ -799,13 +936,17 @@
 
         function typeWriter() {
             const textElement = document.getElementById('typed-text');
-            const currentPhrase = phrases[phraseIndex];
+            const arabicElement = document.getElementById('typed-text-arabic');
+            const currentPhrase = phrases[phraseIndex].en;
+            const currentArabicPhrase = phrases[phraseIndex].ar;
             
             if (isDeleting) {
                 textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                arabicElement.textContent = currentArabicPhrase.substring(0, charIndex - 1);
                 charIndex--;
             } else {
                 textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                arabicElement.textContent = currentArabicPhrase.substring(0, charIndex + 1);
                 charIndex++;
             }
 
@@ -865,12 +1006,9 @@
             const facts = [
                 "★ 14 years old",
                 "◆ Egyptian living in UAE",
-                "✦ Future Entrepreneur",
                 "★ 10th Grade",
-                "◆ Innovation Driven",
-                "★ Product Builder",
-                "◆ Gaming Enthusiast",
-                "✦ Market Researcher"
+                "◆ Football Fan",
+                "✦ Tech Enthusiast"
             ];
             const container = document.getElementById('floating-facts');
             
@@ -878,10 +1016,10 @@
                 const fact = document.createElement('div');
                 fact.className = 'floating-fact';
                 fact.textContent = factText;
-                fact.style.left = Math.random() * 100 + '%';
-                fact.style.top = Math.random() * 100 + '%';
-                fact.style.animationDelay = (i * 2) + 's';
-                fact.style.animationDuration = (15 + Math.random() * 10) + 's';
+                fact.style.left = (10 + Math.random() * 80) + '%';
+                fact.style.top = (10 + Math.random() * 80) + '%';
+                fact.style.animationDelay = (i * 2.5) + 's';
+                fact.style.animationDuration = (18 + Math.random() * 12) + 's';
                 container.appendChild(fact);
             });
         }
@@ -889,13 +1027,13 @@
         function createParticles() {
             const container = document.getElementById('particles');
             
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 12 + 's';
-                particle.style.animationDuration = (Math.random() * 8 + 8) + 's';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 6) + 's';
                 container.appendChild(particle);
             }
         }
